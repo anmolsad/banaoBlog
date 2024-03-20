@@ -8,7 +8,7 @@ from .models import Account
 # Create your views here.
 def register(request):
     if request.user.is_authenticated:
-            return redirect("homepage")
+            return redirect("bloghome")
     if request.method =="POST":
         username= request.POST.get('username')
         email= request.POST.get('email')
@@ -59,7 +59,7 @@ def register(request):
 
 def loginpage(request):
     if request.user.is_authenticated:
-        return redirect("homepage")
+        return redirect("bloghome")
     if request.method=='POST':
         username=request.POST.get('uname')
         password= request.POST.get('pass')
@@ -67,7 +67,7 @@ def loginpage(request):
         validate_user=authenticate(username=username,password=password)
         if validate_user is not None:
             login(request,validate_user)
-            return redirect('homepage')
+            return redirect('bloghome')
         else:
             messages.error(request,'user does not exist')
             return redirect('login')

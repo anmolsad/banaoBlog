@@ -1,0 +1,52 @@
+{% include './nav.html' %}
+<div class="container">
+  <h1 class="blog-title">{{post.title}}</h1>
+  <img src="{{post.image.url}}" alt="Blog Image" class="blog-image">
+  <p class="blog-summary">{{post.summary}}</p>
+  <span class="blog-category">Category: {{post.categories}}</span>
+  <div class="blog-content">
+    <p>
+        {{post.content}}
+    </p>
+  </div>
+  <span class="blog-category">Author: {{post.author}}</span>
+</div>
+</body>
+<style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .blog-title {
+      font-size: 24px;
+      color: #333;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .blog-image {
+        height: 250px;
+    width: 100%;
+    }
+    .blog-summary {
+      font-size: 16px;
+      color: #666;
+      text-align: center;
+    }
+    .blog-category {
+      font-style: italic;
+      color: #007bff;
+    }
+    .blog-content {
+      text-align: justify;
+    }
+  </style>
+</html>
